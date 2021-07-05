@@ -8,7 +8,7 @@ const gameRules = [
 const options = ['Rock', 'Paper', 'Scissors'];
 const gameBtn = document.getElementById('play-button');
 
-// Capitalize first letter to match options array, for a nicer output
+// Capitalize first letter to match options array, for a formatted output
 const capitalizeFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 // Player's move
@@ -16,7 +16,7 @@ const playerMove = () => {
   let input = "";
   do {
     input = capitalizeFirst(prompt("Enter your move: ").toLowerCase());
-  } while (input != "Rock" && input != "Raper" && input != "Scissors");
+  } while (input != "Rock" && input != "Paper" && input != "Scissors");
 
   return options.indexOf(input);
 }
@@ -54,13 +54,16 @@ const game = () => {
       else computerScore++
   }
   if (playerScore === computerScore) {
-    console.log("It's a tie! No one won!")
+    console.log("It's a tie! No one won!");
+    return;
   }
   if (playerScore > computerScore) {
     console.log("Congrats! You Won!");
+    return;
   }
   if (playerScore < computerScore) {
-    console.log("Sorry, You lost!")
+    console.log("Sorry, You lost!");
+    return;
   } 
 }
 
