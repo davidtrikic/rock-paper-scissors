@@ -12,7 +12,7 @@ const gameBtn = document.getElementById('play-button');
 const capitalizeFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 // Player's move
-const playerMove = () => {
+const getPlayerMove = () => {
   let input = "";
   do {
     input = capitalizeFirst(prompt("Enter your move: ").toLowerCase());
@@ -22,14 +22,14 @@ const playerMove = () => {
 }
 
 // Generate computer's move
-const computerPlay = () => Math.floor(Math.random() * 3);
+const getComputerMove = () => Math.floor(Math.random() * 3);
 
 // Play one round
 const playRound = () => {
   let playerSelection, computerSelection;
   
-  playerSelection = playerMove();
-  computerSelection = computerPlay();
+  playerSelection = geTplayerMove();
+  computerSelection = getComputerMove();
 
   if (computerSelection != playerSelection) 
   {
@@ -47,7 +47,7 @@ const playRound = () => {
 
 
 // Main game function
-const game = () => {
+const playGame = () => {
   let playerScore = 0, computerScore = 0;
 
   while (playerScore < 5 && computerScore < 5) {
@@ -71,5 +71,5 @@ const game = () => {
 }
 
 // Start game
-gameBtn.addEventListener('click', game);
+gameBtn.addEventListener('click', playGame);
 
