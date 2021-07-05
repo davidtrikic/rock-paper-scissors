@@ -49,10 +49,13 @@ const playRound = () => {
 // Main game function
 const game = () => {
   let playerScore = 0, computerScore = 0;
-  for (let i = 0; i < 5; i++) {
+
+  while (playerScore < 5 && computerScore < 5) {
     if (playRound()) playerScore++
-      else computerScore++
+    else computerScore++
   }
+  console.log(`- Final result - \nYour score: ${playerScore} \nComputer score: ${computerScore}`);
+
   if (playerScore === computerScore) {
     console.log("It's a tie! No one won!");
     return;
