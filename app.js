@@ -1,14 +1,14 @@
 // Game rules table, i beats j (i = computer, j = player)
 const gameRules = [
-  ['x', 1,  0],
-  [0,  'x', 1],
-  [1,   0, 'x']
+  [null, 1,  0],
+  [0,  null, 1],
+  [1,   0, null]
 ];
 
 const options = ['Rock', 'Paper', 'Scissors'];
 const gameBtn = document.getElementById('play-button');
 
-// Capitalize first letter to match options array, for nicer output
+// Capitalize first letter to match options array, for a nicer output
 const capitalizeFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 // Player's move
@@ -24,22 +24,21 @@ const playerMove = () => {
 // Generate computer's move
 const computerPlay = () => Math.floor(Math.random() * 3);
 
-
+// Play one round
 const playRound = () => {
   let playerSelection, computerSelection;
   
   playerSelection = playerMove();
   computerSelection = computerPlay();
 
-  console.log("Player: " + options[playerSelection]);
-  console.log("Computer: " + options[computerSelection]);
-
   if (computerSelection != playerSelection) 
   {
     if (gameRules[computerSelection][playerSelection]) {
-      return `You Won! ${options[playerSelection]} beats ${options[computerSelection]}`;
-    } 
-    return `You Lose! ${options[computerSelection]} beats ${options[playerSelection]}`; 
+      console.log(`You Won! ${options[playerSelection]} beats ${options[computerSelection]}`)
+      return 1;
+    }
+    console.log(`You Lose! ${options[computerSelection]} beats ${options[playerSelection]}`)
+    return 0; 
   }
   // If tie, repeat function call
   alert("It's a tie! Please repeat this round!")
@@ -47,5 +46,24 @@ const playRound = () => {
 };
 
 
-// gameBtn.addEventListener('click', console.log(playRound));
+// Main game function
+const game = () => {
+  let playerScore = 0, computerScore = 0;
+  for (let i = 0; i < 5; i++) {
+    if (playRound()) playerScore++
+      else computerScore++
+  }
+  if (playerScore === computerScore) {
+    console.log("It's a tie! No one won!")
+  }
+  if (playerScore > computerScore) {
+    console.log("Congrats! You Won!");
+  }
+  if (playerScore < computerScore) {
+    console.log("Sorry, You lost!")
+  } 
+}
+
+// Start game
+gameBtn.addEventListener('click', game);
 
