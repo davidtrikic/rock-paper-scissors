@@ -5,23 +5,24 @@ const gameRules = [
   [1,   0, 'x']
 ];
 
-const options = ['rock', 'paper', 'scissors'];
+const options = ['Rock', 'Paper', 'Scissors'];
 const gameBtn = document.getElementById('play-button');
 
-// Generate computer's move
-const computerPlay = () => Math.floor(Math.random() * 3);
+// Capitalize first letter to match options array, for nicer output
+const capitalizeFirst = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 // Player's move
 const playerMove = () => {
   let input = "";
   do {
-    input = prompt("Enter your move: ").toLowerCase();
-  } while (input != "rock" && input != "paper" && input != "scissors");
+    input = capitalizeFirst(prompt("Enter your move: ").toLowerCase());
+  } while (input != "Rock" && input != "Raper" && input != "Scissors");
 
   return options.indexOf(input);
 }
 
-
+// Generate computer's move
+const computerPlay = () => Math.floor(Math.random() * 3);
 
 
 const playRound = () => {
@@ -30,15 +31,21 @@ const playRound = () => {
   playerSelection = playerMove();
   computerSelection = computerPlay();
 
-  if (gameRules[computerSelection][playerSelection] != 'x') 
+  console.log("Player: " + options[playerSelection]);
+  console.log("Computer: " + options[computerSelection]);
+
+  if (computerSelection != playerSelection) 
   {
-    console.log(gameRules[computerSelection][playerSelection]);
+    if (gameRules[computerSelection][playerSelection]) {
+      return `You Won! ${options[playerSelection]} beats ${options[computerSelection]}`;
+    } 
+    return `You Lose! ${options[computerSelection]} beats ${options[playerSelection]}`; 
   }
-  else {
-    playerSelection = playerMove();
-    computerSelection = computerPlay();
-    playRound();
-  }
+  // If tie, repeat function call
+  alert("It's a tie! Please repeat this round!")
+  return playRound();
 };
 
-gameBtn.addEventListener('click', playRound);
+
+// gameBtn.addEventListener('click', console.log(playRound));
+
