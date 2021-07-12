@@ -28,7 +28,7 @@ const getComputerMove = () => Math.floor(Math.random() * 3);
 const playRound = () => {
   let playerSelection, computerSelection;
   
-  playerSelection = geTplayerMove();
+  playerSelection = getPlayerMove();
   computerSelection = getComputerMove();
 
   if (computerSelection != playerSelection) 
