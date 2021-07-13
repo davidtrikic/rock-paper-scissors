@@ -23,6 +23,7 @@ h1 + h2 {
 }
 .game-status, .game-buttons {
   text-align: center;
+  transition: all 1s;
 }
 .game-status p {
   font-size: 1.25rem;
@@ -57,7 +58,6 @@ button:hover {
   top: 0;
   bottom: 0;
   background: #000000ab;
-  /* visibility: hidden; */
 }
 .modal {
   min-width: 250px;
@@ -70,4 +70,18 @@ button:hover {
   display: inline-block;
   padding: .5em 1em;
   background: crimson;
+}
+.player-icon, .computer-icon .fa-question-circle {
+  transform: rotate(45deg);
+  transition: all .5s;
+}
+.computer-icon, .player-icon .fa-question-circle {
+  transform: rotate(-45deg);
+  transition: all .5s;
+}
+.fa-hand-rock, .fa-hand-paper, .fa-hand-peace {
+  transition: all .5s;
+}
+.clicked {
+  transform: scale(1.1);
 }

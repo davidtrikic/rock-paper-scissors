@@ -30,7 +30,7 @@ const getComputerMove = () => Math.floor(Math.random() * 3);
 
 const toggleIcons = (e, computer) => {
   computerIcon.setAttribute('class', `fas fa-8x ${iconClasses[options[computer]]}`);
-  playerIcon.setAttribute('class', `fa-8x ${e.target.className}` )
+  playerIcon.setAttribute('class', `fa-8x ${e.target.className}`);
 }
 
 const keepScore = (selection, computer, player) => {
@@ -67,14 +67,14 @@ const newGame = () => {
   computerScoreDisplay.textContent = 0;
   gameStatusDisplay.textContent = "Choose your move";
   computerIcon.setAttribute('class', `${iconClasses.question}`);
-  playerIcon.setAttribute('class', `${iconClasses.question}`)
+  playerIcon.setAttribute('class', `${iconClasses.question}`);
 }
 const playRound = (e) => {
   let playerSelection, computerSelection;
   playerSelection = e.target.id;
   computerSelection = getComputerMove();
   toggleIcons(e, computerSelection);
-
+  
   if (computerSelection != playerSelection) 
   {
     keepScore(gameRules[computerSelection][playerSelection], computerSelection, playerSelection);
@@ -88,4 +88,3 @@ newGameBtn.addEventListener('click', newGame);
 
 const buttons = document.querySelectorAll('.game-buttons button');
 buttons.forEach(button => button.addEventListener('click', playRound));
-
