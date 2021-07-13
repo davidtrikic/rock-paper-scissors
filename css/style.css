@@ -1,0 +1,12 @@
+button {
+  border: none;
+  background: none;
+}
+button:hover {
+  cursor: pointer;
+}
+svg {
+}
+.player-score, .computer-score {
+  font-size: 5rem;
+}
