@@ -11,12 +11,15 @@ const computerScoreDisplay = document.querySelector('.computer-score p');
 const gameStatusDisplay = document.querySelector('.game-status p');
 const playerIcon = document.querySelector('#player-icon');
 const computerIcon = document.querySelector('#computer-icon');
+const modal = document.querySelector('.modal-wrapper');
+const modalMsg = document.querySelector('.modal p');
+const newGameBtn = document.querySelector('#new-game');
 const scores = {
   playerScore: 0,
   computerScore: 0
 }
 const iconClasses = {
-  question: "fa-question-circle",
+  question: "far fa-8x fa-question-circle",
   Rock: "fa-hand-rock",
   Paper: "fa-hand-paper",
   Scissors: "fa-hand-peace"
@@ -47,8 +50,25 @@ const hasWon = () => (scores.playerScore === 5 || scores.computerScore === 5);
 
 const gameEnd = () => {
   buttons.forEach(button => button.disabled = true);
+  modal.style.display = "flex";
+  if (scores.playerScore === 5) {
+    modalMsg.textContent = "You won!";
+    return;
+  }
+  modalMsg.textContent = "Game over, you lost!";
 }
 
+const newGame = () => {
+  buttons.forEach(button => button.disabled = false);
+  modal.style.display = "none";
+  scores.playerScore = 0;
+  scores.computerScore = 0;
+  playerScoreDisplay.textContent = 0;
+  computerScoreDisplay.textContent = 0;
+  gameStatusDisplay.textContent = "Choose your move";
+  computerIcon.setAttribute('class', `${iconClasses.question}`);
+  playerIcon.setAttribute('class', `${iconClasses.question}`)
+}
 const playRound = (e) => {
   let playerSelection, computerSelection;
   playerSelection = e.target.id;
@@ -64,6 +84,8 @@ const playRound = (e) => {
   gameStatusDisplay.textContent = "It's a tie! Repeat this round!";
 };
 
-const buttons = document.querySelectorAll('button');
+newGameBtn.addEventListener('click', newGame);
+
+const buttons = document.querySelectorAll('.game-buttons button');
 buttons.forEach(button => button.addEventListener('click', playRound));
 

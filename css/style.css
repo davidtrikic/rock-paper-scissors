@@ -21,8 +21,11 @@ h1 + h2 {
   max-width: 900px;
   margin: 0 auto;
 }
-.game-status, .buttons {
+.game-status, .game-buttons {
   text-align: center;
+}
+.game-status p {
+  font-size: 1.25rem;
 }
 .player, .computer {
   display: flex;
@@ -41,7 +44,30 @@ button {
 button:hover {
   cursor: pointer;
 }
-
 .player-score, .computer-score {
   font-size: 5rem;
+}
+.modal-wrapper {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000000ab;
+  /* visibility: hidden; */
+}
+.modal {
+  min-width: 250px;
+  padding: 1em;
+  text-align: center;
+  background: goldenrod;
+  z-index: 99;
+}
+.modal button {
+  display: inline-block;
+  padding: .5em 1em;
+  background: crimson;
 }
