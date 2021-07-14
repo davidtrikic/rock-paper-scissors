@@ -1,5 +1,5 @@
 :root {
-  --clr-background: #14213d;
+  --clr-main: #14213d;
   --clr-secondary: #e5e5e5;
   --clr-accent: #fca311;
   --clr-font: #fff;
@@ -11,7 +11,8 @@ body {
   letter-spacing: 1px;
   overflow-x: hidden;
   position: relative;
-  background: var(--clr-background);
+  padding-top: 1em;
+  background: var(--clr-main);
   color: var(--clr-font);
 }
 a:link, a:visited {
@@ -20,6 +21,7 @@ a:link, a:visited {
 h1 {
   text-align: center;
   margin-bottom: .5rem;
+  margin-top: 0;
 }
 h1 + h2 {
   margin: 0;
@@ -47,6 +49,7 @@ h1 + h2 {
 }
 .game-status p {
   font-size: 1.25rem;
+  margin-top: 0;
 }
 .player, .computer {
   display: flex;
@@ -55,6 +58,7 @@ h1 + h2 {
 }
 .player p, .computer p {
   margin: 1rem 0;
+  margin-bottom: 0;
   font-size: 6rem;
   font-weight: 800;
 }
@@ -82,7 +86,7 @@ button:hover {
 }
 .modal-wrapper {
   position: absolute;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   inset: 0;
@@ -92,15 +96,27 @@ button:hover {
   min-width: 250px;
   padding: 1em;
   text-align: center;
-  background: goldenrod;
+  background: var(--clr-accent);
+  border-radius: 4px;
   z-index: 99;
 }
 .modal button {
   display: inline-block;
   padding: .5em 1em;
-  background: crimson;
+  border-radius: 4px;
+  background: var(--clr-main);
+  color: var(--clr-font);
+  transition: all .1s;
 }
-footer p {
+.modal button:hover {
+  background: #735CDD;
+}
+footer  {
   text-align: center;
   margin-top: 4em;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+footer p {
+  margin-bottom: 0;
 }
