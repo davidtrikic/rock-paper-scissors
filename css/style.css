@@ -4,7 +4,6 @@
   --clr-accent: #fca311;
   --clr-font: #fff;
 }
-
 body {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 18px;
@@ -40,21 +39,27 @@ h1 + h2 {
   margin: 0 auto;
 }
 .game-status, .game-buttons {
-  text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.game-buttons button:hover {
+.game-buttons button:hover, .game-buttons button:active {
   color: var(--clr-secondary);
   transition: all .2s;
 }
 .game-status p {
   font-size: 1.25rem;
-  margin-top: 0;
 }
 .player, .computer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.player-icon, .player-icon i, .computer-icon, .computer-icon i{
+  display: flex;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 .player p, .computer p {
   margin: 1rem 0;
@@ -86,7 +91,7 @@ button:hover {
 }
 .modal-wrapper {
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   inset: 0;
@@ -108,7 +113,7 @@ button:hover {
   color: var(--clr-font);
   transition: all .1s;
 }
-.modal button:hover {
+.modal button:hover, .modal button:active {
   background: #735CDD;
 }
 footer  {
@@ -119,4 +124,13 @@ footer  {
 }
 footer p {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .player-icon {
+    transform: scale(0.8) rotate(45deg);  
+  }
+  .computer-icon {
+    transform: scale(0.8) rotate(-45deg);
+  }
 }
