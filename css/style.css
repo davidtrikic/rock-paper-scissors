@@ -16,6 +16,7 @@ body {
 }
 a:link, a:visited {
   color: var(--clr-secondary);
+  user-select: none;
 }
 h1 {
   text-align: center;
@@ -55,10 +56,10 @@ button:hover {
 .game-status p {
   font-size: 1.25rem;
 }
-.game-buttons button:hover, .game-buttons button:active {
+/* .game-buttons button:hover, .game-buttons button:active {
   color: var(--clr-secondary);
   transition: all .2s;
-}
+} */
 .player, .computer {
   display: flex;
   flex-direction: column;
