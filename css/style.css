@@ -18,6 +18,9 @@ a:link, a:visited {
   color: var(--clr-secondary);
   user-select: none;
 }
+a:hover {
+  cursor: pointer;
+}
 h1 {
   text-align: center;
   margin-bottom: .5rem;
@@ -29,14 +32,6 @@ h1 + h2 {
   text-align: center;
   font-weight: 300;
 }
-/* button {
-  border: none;
-  background: none;
-  margin: 0 .5rem;
-}
-button:hover {
-  cursor: pointer;
-} */
 .main-game-panel {
   display: flex;
   justify-content: space-around;
@@ -52,7 +47,15 @@ button:hover {
 }
 .game-status p {
   font-size: 1.25rem;
-  margin-top: 2em;
+  margin-top: 1em;
+}
+.game-buttons {
+  display: flex;
+  justify-content: center;
+}
+.game-buttons a {
+  display: block;
+  margin: 0 .125em;
 }
 .game-buttons a:hover, .game-buttons a:active {
   color: var(--clr-secondary);
@@ -73,11 +76,11 @@ button:hover {
   overflow: hidden;
 }
 .player-icon, .computer-icon .fa-question-circle {
-  /* transform: rotate(45deg); */
+  transform: rotate(45deg);
   transition: all .5s;
 }
 .computer-icon, .player-icon .fa-question-circle {
-  /* transform: rotate(-45deg); */
+  transform: rotate(-45deg);
   transition: all .5s;
 }
 .fa-hand-rock, .fa-hand-paper, .fa-hand-peace {
@@ -102,7 +105,7 @@ button:hover {
   border-radius: 4px;
   z-index: 99;
 }
-.modal button {
+.modal a {
   display: inline-block;
   padding: .5em 1em;
   border-radius: 4px;
@@ -110,7 +113,7 @@ button:hover {
   color: var(--clr-font);
   transition: all .1s;
 }
-.modal button:hover, .modal button:active {
+.modal a:hover, .modal a:active {
   background: #735CDD;
 }
 footer  {
