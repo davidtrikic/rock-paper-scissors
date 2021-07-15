@@ -77,11 +77,11 @@ main {
   font-weight: 800;
 }
 .player-icon, .computer-icon .fa-question-circle {
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   transition: all .5s;
 }
 .computer-icon, .player-icon .fa-question-circle {
-  transform: rotate(-45deg);
+  /* transform: rotate(-45deg); */
   transition: all .5s;
 }
 .fa-hand-rock, .fa-hand-paper, .fa-hand-peace {
@@ -132,7 +132,7 @@ footer p {
   margin-top: 1em;
   color: var(--clr-secondary);
 }
-
+/* 
 @media screen and (max-width: 400px) {
   .player-icon {
     transform: scale(0.8) rotate(45deg);  
@@ -140,4 +140,4 @@ footer p {
   .computer-icon {
     transform: scale(0.8) rotate(-45deg);
   }
-}
+} */
