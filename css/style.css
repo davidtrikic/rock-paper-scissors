@@ -8,7 +8,7 @@ body {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   position: relative;
   padding-top: 1em;
   background: var(--clr-main);
