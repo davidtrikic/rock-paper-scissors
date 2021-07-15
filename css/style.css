@@ -53,16 +53,11 @@ main {
   text-transform: uppercase;
 }
 .game-status, .game-buttons {
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .game-status p {
   font-size: 1.25rem;
-}
-.game-buttons {
-  max-width: 100vw;
+  margin-top: 2em;
 }
 .game-buttons button:hover, .game-buttons button:active {
   color: var(--clr-secondary);
@@ -79,12 +74,15 @@ main {
   font-size: 6rem;
   font-weight: 800;
 }
+.player-icon, .computer-icon {
+  overflow: hidden;
+}
 .player-icon, .computer-icon .fa-question-circle {
-  /* transform: rotate(45deg); */
+  transform: rotate(45deg);
   transition: all .5s;
 }
 .computer-icon, .player-icon .fa-question-circle {
-  /* transform: rotate(-45deg); */
+  transform: rotate(-45deg);
   transition: all .5s;
 }
 .fa-hand-rock, .fa-hand-paper, .fa-hand-peace {
@@ -135,7 +133,7 @@ footer p {
   margin-top: 1em;
   color: var(--clr-secondary);
 }
-/* 
+
 @media screen and (max-width: 400px) {
   .player-icon {
     transform: scale(0.8) rotate(45deg);  
@@ -143,4 +141,4 @@ footer p {
   .computer-icon {
     transform: scale(0.8) rotate(-45deg);
   }
-} */
+}
