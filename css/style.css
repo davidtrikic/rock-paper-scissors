@@ -56,11 +56,6 @@ h1 + h2 {
   flex-direction: column;
   align-items: center;
 }
-.player-icon, .player-icon i, .computer-icon, .computer-icon i{
-  display: flex;
-  flex-shrink: 1;
-  overflow: hidden;
-}
 .player p, .computer p {
   margin: 1rem 0;
   margin-bottom: 0;
