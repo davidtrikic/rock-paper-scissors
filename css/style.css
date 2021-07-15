@@ -13,6 +13,7 @@ body {
   padding-top: 1em;
   background: var(--clr-main);
   color: var(--clr-font);
+  user-select: none;
 }
 a:link, a:visited {
   color: var(--clr-secondary);
@@ -22,6 +23,7 @@ a:hover {
   cursor: pointer;
 }
 h1 {
+  font-size: 3em;
   text-align: center;
   margin-bottom: .5rem;
   margin-top: 0;
@@ -139,5 +141,20 @@ footer p {
   }
   .computer-icon {
     transform: scale(0.8) rotate(-45deg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 3em;
+  }
+  h1 + h2 {
+    margin-bottom: 2em;
+  }
+  .main-game-panel {
+    margin-bottom: 2em;
+  }
+  .game-status {
+    margin-bottom: 2em;
   }
 }
