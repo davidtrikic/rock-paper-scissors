@@ -90,5 +90,5 @@ const playRound = (e) => {
 newGameBtn.addEventListener('click', newGame);
 
 // Start game
-const buttons = document.querySelectorAll('.game-buttons button');
+const buttons = document.querySelectorAll('.game-buttons a');
 buttons.forEach(button => button.addEventListener('click', playRound));

@@ -29,14 +29,14 @@ h1 + h2 {
   text-align: center;
   font-weight: 300;
 }
-button {
+/* button {
   border: none;
   background: none;
   margin: 0 .5rem;
 }
 button:hover {
   cursor: pointer;
-}
+} */
 .main-game-panel {
   display: flex;
   justify-content: space-around;
@@ -54,7 +54,7 @@ button:hover {
   font-size: 1.25rem;
   margin-top: 2em;
 }
-.game-buttons button:hover, .game-buttons button:active {
+.game-buttons a:hover, .game-buttons a:active {
   color: var(--clr-secondary);
   transition: all .2s;
 }
