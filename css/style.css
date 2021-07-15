@@ -115,10 +115,16 @@ footer  {
   text-align: center;
   margin-top: 4em;
   margin-bottom: 0;
-  padding-bottom: 1em;
 }
 footer p {
   margin-bottom: 0;
+}
+.font-awesome  {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 300;
+  margin-top: 1em;
+  color: var(--clr-secondary);
 }
 
 @media screen and (max-width: 400px) {
