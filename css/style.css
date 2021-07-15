@@ -37,13 +37,8 @@ button {
 button:hover {
   cursor: pointer;
 }
-main {
-  display: grid;
-  grid-template-rows: 3fr 1fr 1fr;
-}
 .main-game-panel {
   display: flex;
-  width: 100%;
   justify-content: space-around;
   max-width: 900px;
   margin: 0 auto;
@@ -78,11 +73,11 @@ main {
   overflow: hidden;
 }
 .player-icon, .computer-icon .fa-question-circle {
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   transition: all .5s;
 }
 .computer-icon, .player-icon .fa-question-circle {
-  transform: rotate(-45deg);
+  /* transform: rotate(-45deg); */
   transition: all .5s;
 }
 .fa-hand-rock, .fa-hand-paper, .fa-hand-peace {
