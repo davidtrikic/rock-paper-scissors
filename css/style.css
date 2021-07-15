@@ -28,9 +28,13 @@ h1 + h2 {
   text-align: center;
   font-weight: 300;
 }
-.main-game-panel h2 {
-  margin-bottom: 2rem;
-  text-transform: uppercase;
+button {
+  border: none;
+  background: none;
+  margin: 0 .5rem;
+}
+button:hover {
+  cursor: pointer;
 }
 .main-game-panel {
   display: grid;
@@ -38,18 +42,22 @@ h1 + h2 {
   max-width: 900px;
   margin: 0 auto;
 }
+.main-game-panel h2 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
 .game-status, .game-buttons {
   margin-bottom: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.game-status p {
+  font-size: 1.25rem;
+}
 .game-buttons button:hover, .game-buttons button:active {
   color: var(--clr-secondary);
   transition: all .2s;
-}
-.game-status p {
-  font-size: 1.25rem;
 }
 .player, .computer {
   display: flex;
@@ -61,14 +69,6 @@ h1 + h2 {
   margin-bottom: 0;
   font-size: 6rem;
   font-weight: 800;
-}
-button {
-  border: none;
-  background: none;
-  margin: 0 .5rem;
-}
-button:hover {
-  cursor: pointer;
 }
 .player-icon, .computer-icon .fa-question-circle {
   transform: rotate(45deg);
