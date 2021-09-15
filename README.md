@@ -12,3 +12,4 @@ This was a small Javascript project from The Odin Project Web Development Curric
 
 ## Screenshots
 ![](./screenshots/screenshot_1.png)
+![](./screenshots/screenshot_2.png)
