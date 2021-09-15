@@ -11,5 +11,7 @@ This was a small Javascript project from The Odin Project Web Development Curric
 [RPS Game](https://davidtrikic.github.io/rock-paper-scissors/)
 
 ## Screenshots
+### Desktop
 ![](./screenshots/screenshot_1.png)
+### Mobile
 ![](./screenshots/screenshot_2.png)
